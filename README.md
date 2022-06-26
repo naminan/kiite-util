@@ -2,7 +2,7 @@
 
 Kiite Cafe用のTampermonkeyスクリプト
 
-動画再生数を表示します
+動画再生数と選曲履歴を表示します
 
 PCのEdgeとChromeで動作します
 
@@ -15,7 +15,7 @@ https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldm
 
 https://github.com/naminan/kiite-util/raw/main/src/kiitecafe.user.js
 
-上記のリンクからスクリプトをインストールすると、KiiteCafeページに再生数が表示されます
+上記のリンクからスクリプトをインストールすると、KiiteCafeページに再生数と選曲履歴が表示されます
 
 ---
 

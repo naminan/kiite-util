@@ -42,7 +42,10 @@ fs.watch(vrchatPath, (event, filename) => {
                 const endIndex = txt.indexOf('\n', markerIndex)
                 if (markerIndex != -1) {
                     const datas = txt.slice(markerIndex + MARKER.length, endIndex).split(',')
-                    console.log(datas[0], datas[1] ?? '')
+                    const date = new Date();
+                    date.setTime(date.getTime() - (date.getTimezoneOffset() * 60 * 1000));
+                    const str_date = date.toISOString().replace('T', ' ').slice(0, 19);
+                    console.log(str_date, datas[0], datas[1] ?? '')
                     wss.clients.forEach(client => {
                         if (client.readyState === WebSocket.OPEN) {
                             client.send(JSON.stringify({ type: datas[0], p: datas[1] }));

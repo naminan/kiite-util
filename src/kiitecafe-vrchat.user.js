@@ -7,8 +7,8 @@
 // @match        https://cafe.kiite.jp/pc
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=cafe.kiite.jp
 // @grant        none
-// @updateURL    https://github.com/naminan/kiite-util/raw/main/src/kiitecafe.vrchat.js
-// @downloadURL    https://github.com/naminan/kiite-util/raw/main/src/kiitecafe.vrchat.js
+// @updateURL    https://github.com/naminan/kiite-util/raw/main/src/kiitecafe-vrchat.user.js
+// @downloadURL    https://github.com/naminan/kiite-util/raw/main/src/kiitecafe-vrchat.user.js
 // ==/UserScript==
 
 (function () {

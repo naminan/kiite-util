@@ -15,9 +15,9 @@ let openFilename = ''
 let readPosition = 0
 let fd = null
 function open(filename) {
-    if (!filename && !fs.existsSync(vrchatPath + filename))
-        return
     if (openFilename == filename)
+        return
+    if (!filename || !fs.existsSync(vrchatPath + filename))
         return
     console.log('open', filename)
     openFilename = filename

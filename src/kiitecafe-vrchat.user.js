@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KiiteCafe-VRChat
 // @namespace    https://github.com/naminan/
-// @version      0.1
+// @version      0.2
 // @description  KiiteCafeとVRChat連携
 // @author       nami
 // @match        https://cafe.kiite.jp/pc
@@ -46,7 +46,9 @@
             console.log('--VRChat--', json.type, json.p ?? '')
 
             if (json.type == 'rotate') {
-                document.getElementsByClassName('rotate')[0].dispatchEvent(new Event('click'))
+                if (json.p != (cafe_users.gesture.my_gesture != '')) {
+                    document.getElementsByClassName('rotate')[0].dispatchEvent(new Event('click'))
+                }
             }
             if (json.type == 'comment') {
                 commentInput.value = await base64Decode(json.p)
@@ -59,10 +61,19 @@
                 cleanButton.dispatchEvent(new Event('click'))
             }
             if (json.type == 'favorite') {
-                favoriteButton.dispatchEvent(new Event('click'))
+                if (json.p != cafe_music.sns_song.is_faved) {
+                    favoriteButton.dispatchEvent(new Event('click'))
+                }
             }
             if (json.type == 'my_pos') {
                 //usersElement.dispatchEvent(new Event('click'))
+            }
+            if (json.type == 'penlight') {
+                for (const elm of document.getElementsByClassName('bar_btn')) {
+                    if (elm.getAttribute("data-color") == json.p) {
+                        elm.dispatchEvent(new Event('click'))
+                    }
+                }
             }
         }
     }

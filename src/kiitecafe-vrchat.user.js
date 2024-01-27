@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KiiteCafe-VRChat
 // @namespace    https://github.com/naminan/
-// @version      0.2
+// @version      0.3
 // @description  KiiteCafeとVRChat連携
 // @author       nami
 // @match        https://cafe.kiite.jp/pc
@@ -61,7 +61,7 @@
                 cleanButton.dispatchEvent(new Event('click'))
             }
             if (json.type == 'favorite') {
-                if (json.p != cafe_music.sns_song.is_faved) {
+                if (json.p.split(':')[0] != cafe_music.sns_song.is_faved) {
                     favoriteButton.dispatchEvent(new Event('click'))
                 }
             }
